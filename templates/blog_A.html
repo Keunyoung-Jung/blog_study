@@ -1,0 +1,750 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta name="description" content="" />
+  <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors" />
+  <meta name="generator" content="Jekyll v4.1.1" />
+  <title>근영이 블로그</title>
+
+  <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/blog/" />
+
+  <!-- Bootstrap core CSS -->
+  <link href="/static/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+  <style>
+    .bd-placeholder-img {
+      font-size: 1.125rem;
+      text-anchor: middle;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+    html {
+              -webkit-print-color-adjust: exact;
+            }
+            * {
+              box-sizing: border-box;
+              -webkit-print-color-adjust: exact;
+            }
+            
+            html,
+            body {
+              margin: 0;
+              padding: 0;
+            }
+            
+            a,
+            a.visited {
+              color: inherit;
+              text-decoration: underline;
+            }
+            
+            .pdf-relative-link-path {
+              font-size: 80%;
+              color: #444;
+            }
+            
+            h1,
+            h2,
+            h3 {
+              letter-spacing: -0.01em;
+              line-height: 1.2;
+              font-weight: 600;
+              margin-bottom: 0;
+            }
+            
+            .page-title {
+              font-size: 2.5rem;
+              font-weight: 700;
+              margin-top: 0;
+              margin-bottom: 0.75em;
+            }
+            
+            h1 {
+              font-size: 1.875rem;
+              margin-top: 1.875rem;
+            }
+            
+            h2 {
+              font-size: 1.5rem;
+              margin-top: 1.5rem;
+            }
+            
+            h3 {
+              font-size: 1.25rem;
+              margin-top: 1.25rem;
+            }
+            
+            .source {
+              border: 1px solid #ddd;
+              border-radius: 3px;
+              padding: 1.5em;
+              word-break: break-all;
+            }
+            
+            .callout {
+              border-radius: 3px;
+              padding: 1rem;
+            }
+            
+            figure {
+              margin: 1.25em 0;
+              page-break-inside: avoid;
+            }
+            
+            figcaption {
+              opacity: 0.5;
+              font-size: 85%;
+              margin-top: 0.5em;
+            }
+            
+            mark {
+              background-color: transparent;
+            }
+            
+            .indented {
+              padding-left: 1.5em;
+            }
+            
+            hr {
+              background: transparent;
+              display: block;
+              width: 100%;
+              height: 1px;
+              visibility: visible;
+              border: none;
+              border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+            }
+            
+            img {
+              max-width: 100%;
+            }
+            
+            @media only print {
+              img {
+                max-height: 100vh;
+                object-fit: contain;
+              }
+            }
+            
+            @page {
+              margin: 1in;
+            }
+            
+            .collection-content {
+              font-size: 0.875rem;
+            }
+            
+            .column-list {
+              display: flex;
+              justify-content: space-between;
+            }
+            
+            .column {
+              padding: 0 1em;
+            }
+            
+            .column:first-child {
+              padding-left: 0;
+            }
+            
+            .column:last-child {
+              padding-right: 0;
+            }
+            
+            .table_of_contents-item {
+              display: block;
+              font-size: 0.875rem;
+              line-height: 1.3;
+              padding: 0.125rem;
+            }
+            
+            .table_of_contents-indent-1 {
+              margin-left: 1.5rem;
+            }
+            
+            .table_of_contents-indent-2 {
+              margin-left: 3rem;
+            }
+            
+            .table_of_contents-indent-3 {
+              margin-left: 4.5rem;
+            }
+            
+            .table_of_contents-link {
+              text-decoration: none;
+              opacity: 0.7;
+              border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+            }
+            
+            table,
+            th,
+            td {
+              border: 1px solid rgba(55, 53, 47, 0.09);
+              border-collapse: collapse;
+            }
+            
+            table {
+              border-left: none;
+              border-right: none;
+            }
+            
+            th,
+            td {
+              font-weight: normal;
+              padding: 0.25em 0.5em;
+              line-height: 1.5;
+              min-height: 1.5em;
+              text-align: left;
+            }
+            
+            th {
+              color: rgba(55, 53, 47, 0.6);
+            }
+            
+            ol,
+            ul {
+              margin: 0;
+              margin-block-start: 0.6em;
+              margin-block-end: 0.6em;
+            }
+            
+            li > ol:first-child,
+            li > ul:first-child {
+              margin-block-start: 0.6em;
+            }
+            
+            ul > li {
+              list-style: disc;
+            }
+            
+            ul.to-do-list {
+              text-indent: -1.7em;
+            }
+            
+            ul.to-do-list > li {
+              list-style: none;
+            }
+            
+            .to-do-children-checked {
+              text-decoration: line-through;
+              opacity: 0.375;
+            }
+            
+            ul.toggle > li {
+              list-style: none;
+            }
+            
+            ul {
+              padding-inline-start: 1.7em;
+            }
+            
+            ul > li {
+              padding-left: 0.1em;
+            }
+            
+            ol {
+              padding-inline-start: 1.6em;
+            }
+            
+            ol > li {
+              padding-left: 0.2em;
+            }
+            
+            .mono ol {
+              padding-inline-start: 2em;
+            }
+            
+            .mono ol > li {
+              text-indent: -0.4em;
+            }
+            
+            .toggle {
+              padding-inline-start: 0em;
+              list-style-type: none;
+            }
+            
+            /* Indent toggle children */
+            .toggle > li > details {
+              padding-left: 1.7em;
+            }
+            
+            .toggle > li > details > summary {
+              margin-left: -1.1em;
+            }
+            
+            .selected-value {
+              display: inline-block;
+              padding: 0 0.5em;
+              background: rgba(206, 205, 202, 0.5);
+              border-radius: 3px;
+              margin-right: 0.5em;
+              margin-top: 0.3em;
+              margin-bottom: 0.3em;
+              white-space: nowrap;
+            }
+            
+            .collection-title {
+              display: inline-block;
+              margin-right: 1em;
+            }
+            
+            time {
+              opacity: 0.5;
+            }
+            
+            .icon {
+              display: inline-block;
+              max-width: 1.2em;
+              max-height: 1.2em;
+              text-decoration: none;
+              vertical-align: text-bottom;
+              margin-right: 0.5em;
+            }
+            
+            img.icon {
+              border-radius: 3px;
+            }
+            
+            .user-icon {
+              width: 1.5em;
+              height: 1.5em;
+              border-radius: 100%;
+              margin-right: 0.5rem;
+            }
+            
+            .user-icon-inner {
+              font-size: 0.8em;
+            }
+            
+            .text-icon {
+              border: 1px solid #000;
+              text-align: center;
+            }
+            
+            .page-cover-image {
+              display: block;
+              object-fit: cover;
+              width: 100%;
+              height: 30vh;
+            }
+            
+            .page-header-icon {
+              font-size: 3rem;
+              margin-bottom: 1rem;
+            }
+            
+            .page-header-icon-with-cover {
+              margin-top: -0.72em;
+              margin-left: 0.07em;
+            }
+            
+            .page-header-icon img {
+              border-radius: 3px;
+            }
+            
+            .link-to-page {
+              margin: 1em 0;
+              padding: 0;
+              border: none;
+              font-weight: 500;
+            }
+            
+            p > .user {
+              opacity: 0.5;
+            }
+            
+            td > .user,
+            td > time {
+              white-space: nowrap;
+            }
+            
+            input[type="checkbox"] {
+              transform: scale(1.5);
+              margin-right: 0.6em;
+              vertical-align: middle;
+            }
+            
+            p {
+              margin-top: 0.5em;
+              margin-bottom: 0.5em;
+            }
+            
+            .image {
+              border: none;
+              margin: 1.5em 0;
+              padding: 0;
+              border-radius: 0;
+              text-align: center;
+            }
+            
+            .code,
+            code {
+              background: rgba(135, 131, 120, 0.15);
+              border-radius: 3px;
+              padding: 0.2em 0.4em;
+              border-radius: 3px;
+              font-size: 85%;
+              tab-size: 2;
+            }
+            
+            code {
+              color: #eb5757;
+            }
+            
+            .code {
+              padding: 1.5em 1em;
+            }
+            
+            .code-wrap {
+              white-space: pre-wrap;
+              word-break: break-all;
+            }
+            
+            .code > code {
+              background: none;
+              padding: 0;
+              font-size: 100%;
+              color: inherit;
+            }
+            
+            blockquote {
+              font-size: 1.25em;
+              margin: 1em 0;
+              padding-left: 1em;
+              border-left: 3px solid rgb(55, 53, 47);
+            }
+            
+            .bookmark {
+              text-decoration: none;
+              max-height: 8em;
+              padding: 0;
+              display: flex;
+              width: 100%;
+              align-items: stretch;
+            }
+            
+            .bookmark-title {
+              font-size: 0.85em;
+              overflow: hidden;
+              text-overflow: ellipsis;
+              height: 1.75em;
+              white-space: nowrap;
+            }
+            
+            .bookmark-text {
+              display: flex;
+              flex-direction: column;
+            }
+            
+            .bookmark-info {
+              flex: 4 1 180px;
+              padding: 12px 14px 14px;
+              display: flex;
+              flex-direction: column;
+              justify-content: space-between;
+            }
+            
+            .bookmark-image {
+              width: 33%;
+              flex: 1 1 180px;
+              display: block;
+              position: relative;
+              object-fit: cover;
+              border-radius: 1px;
+            }
+            
+            .bookmark-description {
+              color: rgba(55, 53, 47, 0.6);
+              font-size: 0.75em;
+              overflow: hidden;
+              max-height: 4.5em;
+              word-break: break-word;
+            }
+            
+            .bookmark-href {
+              font-size: 0.75em;
+              margin-top: 0.25em;
+            }
+            
+            .sans { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+            .code { font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace; }
+            .serif { font-family: Lyon-Text, Georgia, YuMincho, "Yu Mincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Songti TC", "Songti SC", "SimSun", "Nanum Myeongjo", NanumMyeongjo, Batang, serif; }
+            .mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+            .pdf .sans { font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+            
+            .pdf .code { font-family: Source Code Pro, "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+            
+            .pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, YuMincho, "Yu Mincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Songti TC", "Songti SC", "SimSun", "Nanum Myeongjo", NanumMyeongjo, Batang, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+            
+            .pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+            
+            .highlight-gray {
+              color: rgb(155,154,151);
+            }
+            .highlight-brown {
+              color: rgb(100,71,58);
+            }
+            .highlight-orange {
+              color: rgb(217,115,13);
+            }
+            .highlight-yellow {
+              color: rgb(223,171,1);
+            }
+            .highlight-teal {
+              color: rgb(15,123,108);
+            }
+            .highlight-blue {
+              color: rgb(11,110,153);
+            }
+            .highlight-purple {
+              color: rgb(105,64,165);
+            }
+            .highlight-pink {
+              color: rgb(173,26,114);
+            }
+            .highlight-red {
+              color: rgb(224,62,62);
+            }
+            .highlight-gray_background {
+              background: rgb(235,236,237);
+            }
+            .highlight-brown_background {
+              background: rgb(233,229,227);
+            }
+            .highlight-orange_background {
+              background: rgb(250,235,221);
+            }
+            .highlight-yellow_background {
+              background: rgb(251,243,219);
+            }
+            .highlight-teal_background {
+              background: rgb(221,237,234);
+            }
+            .highlight-blue_background {
+              background: rgb(221,235,241);
+            }
+            .highlight-purple_background {
+              background: rgb(234,228,242);
+            }
+            .highlight-pink_background {
+              background: rgb(244,223,235);
+            }
+            .highlight-red_background {
+              background: rgb(251,228,228);
+            }
+            .block-color-default {
+              color: inherit;
+              fill: inherit;
+            }
+            .block-color-gray {
+              color: rgba(55, 53, 47, 0.6);
+              fill: rgba(55, 53, 47, 0.6);
+            }
+            .block-color-brown {
+              color: rgb(100,71,58);
+              fill: rgb(100,71,58);
+            }
+            .block-color-orange {
+              color: rgb(217,115,13);
+              fill: rgb(217,115,13);
+            }
+            .block-color-yellow {
+              color: rgb(223,171,1);
+              fill: rgb(223,171,1);
+            }
+            .block-color-teal {
+              color: rgb(15,123,108);
+              fill: rgb(15,123,108);
+            }
+            .block-color-blue {
+              color: rgb(11,110,153);
+              fill: rgb(11,110,153);
+            }
+            .block-color-purple {
+              color: rgb(105,64,165);
+              fill: rgb(105,64,165);
+            }
+            .block-color-pink {
+              color: rgb(173,26,114);
+              fill: rgb(173,26,114);
+            }
+            .block-color-red {
+              color: rgb(224,62,62);
+              fill: rgb(224,62,62);
+            }
+            .block-color-gray_background {
+              background: rgb(235,236,237);
+            }
+            .block-color-brown_background {
+              background: rgb(233,229,227);
+            }
+            .block-color-orange_background {
+              background: rgb(250,235,221);
+            }
+            .block-color-yellow_background {
+              background: rgb(251,243,219);
+            }
+            .block-color-teal_background {
+              background: rgb(221,237,234);
+            }
+            .block-color-blue_background {
+              background: rgb(221,235,241);
+            }
+            .block-color-purple_background {
+              background: rgb(234,228,242);
+            }
+            .block-color-pink_background {
+              background: rgb(244,223,235);
+            }
+            .block-color-red_background {
+              background: rgb(251,228,228);
+            }
+            .select-value-color-default { background-color: rgba(206,205,202,0.5); }
+            .select-value-color-gray { background-color: rgba(155,154,151, 0.4); }
+            .select-value-color-brown { background-color: rgba(140,46,0,0.2); }
+            .select-value-color-orange { background-color: rgba(245,93,0,0.2); }
+            .select-value-color-yellow { background-color: rgba(233,168,0,0.2); }
+            .select-value-color-green { background-color: rgba(0,135,107,0.2); }
+            .select-value-color-blue { background-color: rgba(0,120,223,0.2); }
+            .select-value-color-purple { background-color: rgba(103,36,222,0.2); }
+            .select-value-color-pink { background-color: rgba(221,0,129,0.2); }
+            .select-value-color-red { background-color: rgba(255,0,26,0.2); }
+            
+            .checkbox {
+              display: inline-flex;
+              vertical-align: text-bottom;
+              width: 16;
+              height: 16;
+              background-size: 16px;
+              margin-left: 2px;
+              margin-right: 5px;
+            }
+            
+            .checkbox-on {
+              background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+            }
+            
+            .checkbox-off {
+              background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+            }
+
+    @media (min-width: 768px) {
+      .bd-placeholder-img-lg {
+        font-size: 3.5rem;
+      }
+    }
+  </style>
+  <!-- Custom styles for this template -->
+  <link href="https://fonts.googleapis.com/css?family=Playfair+Display:700,900" rel="stylesheet" />
+  <link href="//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css" rel="stylesheet" type="text/css" />
+
+  <!-- Custom styles for this template -->
+  <link href="/static/blog.css" rel="stylesheet" />
+</head>
+
+<body>
+    <div class="container">
+      <header class="blog-header py-3">
+        <div class="row flex-nowrap justify-content-between align-items-center">
+          <div class="col-4 pt-1">
+            <a class="text-muted" href="#">근영이 블로그</a>
+          </div>
+          <div class="col-4 text-center"></div>
+          <div class="col-4 d-flex justify-content-end align-items-center"></div>
+        </div>
+      </header>
+
+      <div class="jumbotron p-4 p-md-5 text-white rounded bg-dark">
+        <div class="col-md-10 px-0">
+          <h2 class="display-4 mb-4">
+            <div class="page-header-icon undefined"><span class="icon">🖥️</span><h1 class="page-title">서버 기술 공부</h1></div>
+          </h2>
+          <p class="lead my-3">
+
+          </p>
+          <p class="lead mb-2">
+            {% if user_email != null %}
+            {{ user_email }} 이메일 주소로 구독중입니다.&nbsp;
+            <a class="btn btn-light" href="/blog/logout" role="button">구독 취소</a>
+            {% else %}
+            이메일을 남겨주시면, 블로그 연재시 메일로 송부드립니다 &nbsp;
+            <form action="/blog/set_email" method="post">
+              <div class="form-row">
+                <div class="col">
+                  <input type="email" class="form-control" name="user_email" placeholder="이메일을 입력해주세요.">
+                  <input type="hidden" name="blog_id" value="A">
+                </div>
+                <div class="col">
+                  <button type="submit" class="btn btn-primary">구독</button>
+                </div>
+              </div>
+            </form>
+          {% endif %}
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <main role="main" class="container">
+      <div class="row">
+        <div class="col-md-8 blog-main">
+          <div class="blog-post">
+            <div class="page-body"><h2 id="ae75a941-36eb-4dad-b770-a23906a50fb8" class="">프론트엔드와 백엔드의 기본 구성</h2><ul id="84f8b5ea-f00b-44c5-a4ac-d397b479fe42" class="bulleted-list"><li>클라이언트 (Request)</li></ul><ul id="d2ef6042-bb6e-4272-be88-d7e2422586eb" class="bulleted-list"><li>웹 서버 (Response)<ul id="4a1ca4ee-b806-4ab8-84d9-ecc327994319" class="bulleted-list"><li>백엔드</li></ul><ul id="67dc104d-06b6-4eca-882a-f6ca7719d2be" class="bulleted-list"><li>프론트엔드</li></ul><ul id="eaf771c5-08af-4d0e-b0ee-3f9b47b70ac8" class="bulleted-list"><li>데이터 베이스</li></ul></li></ul><h2 id="903ca727-5377-4c10-9706-dc8722b08272" class="">웹서비스 개발과 파이썬 flask를 이용한 개발</h2><ul id="040618de-5c3d-4fea-8672-6afc7f7624fa" class="bulleted-list"><li>1세대 : USER → INTERNET → static HTML이용</li></ul><ul id="39200bf8-ab6e-4da4-aacd-8211522f284f" class="bulleted-list"><li>2세대 : USER → INTERNET → Create request-based HTML CGI+DB</li></ul><ul id="c53cf0b7-4f32-4f3d-9843-229a22c3b7f3" class="bulleted-list"><li>3세대 : USER → INTERNET → MVC 패턴 기반 프레임워크 활용<ul id="b1b3e7ac-1764-49f6-92ce-a05f6d390072" class="bulleted-list"><li>MVC : Model-View-Control 패턴으로 구조화된 프레임워크 사용</li></ul></li></ul><ul id="a96937db-1c3c-43af-9bc9-531dbe62928a" class="bulleted-list"><li>4세대 : OpenAPI, RestAPI 를 혼합하여 다양한 서비스 제공, 다양한 웹서비스 개발<ul id="63f66540-3b16-4b23-8928-7991bf6261c2" class="bulleted-list"><li>기능별 백엔드/프론트엔드를 구현해서 분산처리를 통해 빠른 서비스 제공</li></ul></li></ul><h2 id="5b0ca134-9f37-4584-afa2-31dd2184ef9d" class="">웹 백엔드/프론트엔드에 프레임워크를 사용하는 이유</h2><ul id="442cd0b8-1454-4637-9854-a4f7233c68ed" class="bulleted-list"><li>변수/조건/반복 으로 만들기에는 굉장한 시간 필요</li></ul><ul id="6ade41bb-bc72-42db-bd96-a2cd31401930" class="bulleted-list"><li>일정 부분 프레임워크의 장점 활용 필요 (단, 너무 복잡한 프레임워크는 단점 고려가 필요)</li></ul><h2 id="1980f24d-4322-4a73-8a63-0a4efbadb9c6" class="">풀스택 프레임워크와 마이크로 프레임워크</h2><ul id="271bbbe7-3fa4-479a-900a-1d9ed185c268" class="bulleted-list"><li>풀스택 프레임워크 : JAVA Spring, Python Django, Ruby on Rails<ul id="8a5ff5b3-bfcc-48be-a957-3c72c89f6775" class="bulleted-list"><li>요청/응답 수상화, 세션상태 관리, 사용자 인증/권한 관리, 웹페이지 템플릿, URL매핑, 데이터베이스 접근, 보안, 캐시, 데이터 접근 추상화 등 다양한 기능 제공</li></ul><ul id="e882e5d6-aadb-4bff-96a0-89ad4c3c9ebe" class="bulleted-list"><li>다양한 프레임워크 기능을 이해하고, 불필요한 부분까지 구축해야되는 경우가 있음</li></ul></li></ul><ul id="473be607-2edc-404e-bc65-5ed23636d808" class="bulleted-list"><li>마이크로 프레임워크 : 최소 기능만 제공, 확장을 통해 사용해야한다.</li></ul><h2 id="7be5bbde-687a-423a-8502-69bc22196f1c" class="">URL이란</h2><ul id="c9c2564a-8187-4661-ae93-6c22604adf2b" class="bulleted-list"><li>Uniform Resource Locator</li></ul><ul id="d958eb98-5ba1-4e8c-a717-0af72bcdf1de" class="bulleted-list"><li>인터넷 상의 자원 위치 표기를 위한 규약</li></ul><figure class="block-color-yellow_background callout" style="white-space:pre-wrap;display:flex" id="bb88afff-6a63-4782-8c4c-8a01e62d8d7f"><div style="font-size:1.5em"><span class="icon">🔑</span></div><div style="width:100%">URL vs URI
+URI(Uniform Resource Identifier) : 통합 자원 식별자
+원해는 정보를 얻기위해 식별자가 필요하기 때문에 식별자가 붙어있는 full형태를 URI라고 지칭</div></figure><h2 id="624e0036-53ce-409d-ab1b-c66c9e5d4b15" class="">REST</h2><ul id="9912f36a-ad4a-4d43-a8e1-902135204d2f" class="bulleted-list"><li>REST(REpresentational State Transfer)<ul id="e3a1e2a7-cc71-481f-853f-0a2f7808a337" class="bulleted-list"><li>자원(resource)의 표현(representation)에 의한 상태 전달</li></ul><ul id="5b70dadb-b213-4c50-9cee-2a23ac7f5e35" class="bulleted-list"><li>HTTP URI를 통해 자원을 명시하고, HTTP Method를 통해 자원에 대한 CRUD Operation 적용<ul id="f9a29091-851e-4c08-8e8a-e7bba742a70d" class="bulleted-list"><li>CRUD Operation와 HTTP Method<ul id="c2a8b6fc-a993-4732-806b-d0ff5faef7b5" class="bulleted-list"><li>Create : 생성 (POST)</li></ul><ul id="692a5cfa-3d61-4374-8ae9-f801669a7874" class="bulleted-list"><li>Read : 조회 (GET)</li></ul><ul id="bfbbb9e9-17fd-4c82-97ef-2ae0c9903bc3" class="bulleted-list"><li>Update : 수정 (PUT)</li></ul><ul id="84771be3-51e8-4329-8b99-be8538c569f1" class="bulleted-list"><li>Delete : 삭제 (DELETE)</li></ul></li></ul></li></ul></li></ul><h2 id="0fa3ef0c-39b1-4123-aca2-dd448ea256d1" class="">REST API</h2><ul id="241806b1-3356-4844-a11d-ffa781f61b3c" class="bulleted-list"><li>REST 기반으로 서비스 API를 구현한 것</li></ul><ul id="b7f124cc-ad09-4607-b430-f254eb72fee2" class="bulleted-list"><li>마이크로 서비스, OpenAPI 등에서 많이 사용됨</li></ul><ul id="194484f9-3398-4966-aabf-9010a4fad8ad" class="bulleted-list"><li>httpie로 REST API 확인</li></ul><pre id="5b81cc6f-b317-4311-a636-be594d1e11a7" class="code"><code>#간단하게 REST 보내서 확인
+http GET http://localhost:8080/test</code></pre><figure class="block-color-yellow_background callout" style="white-space:pre-wrap;display:flex" id="f43d37fe-da5f-4adc-b954-5ce1ad4dfaca"><div style="font-size:1.5em"><span class="icon">🖨️</span></div><div style="width:100%">HTTP/1.0 200 OK
+Content-Length: 33
+Content-Type: application/json
+Date: Sat, 26 Dec 2020 06:53:23 GMT
+Server: Werkzeug/1.0.1 Python/3.6.9
+
+{
+    &quot;family&quot;: &quot;Jung&quot;,
+    &quot;name&quot;: &quot;keyog&quot;
+}</div></figure><h2 id="053a2871-3259-4fcc-8e68-399a1ec4d7bd" class="">CDN이란?</h2><ul id="040db6f8-e48b-4526-90e4-a4644787186c" class="bulleted-list"><li>CDN(Contents Delivery Network) 은 지리적, 물리적으로 떨어져 있는 사용자에게 컨텐츠 제공자의 컨텐츠를 더 빠르게 제공할 수 있는 기술을 의미</li></ul><ul id="bb95430b-610e-4983-8810-1e9c7c582740" class="bulleted-list"><li>사용자가 멀리 있는 서버로부터 컨텐츠를 다운로드 받으면, 시간이 오래걸리므로, 사용자와 가까운 곳에 위치한 Cache Server에 해당 컨텐츠를 저장해놓고, 컨텐츠 요청시, 서버가 아닌 Cache Server가 응답을 주는 기술</li></ul><h2 id="a4ca3ddd-f312-4273-b172-d2aa608af822" class="">HTTP 상태 코드 wiki</h2><figure id="f17b92e3-369f-4366-92f2-b6e35ea14560"><a href="https://ko.wikipedia.org/wiki/HTTP_%EC%83%81%ED%83%9C_%EC%BD%94%EB%93%9C" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">HTTP 상태 코드</div><div class="bookmark-description">아래는 HTTP(하이퍼텍스트 전송 프로토콜) 응답 상태 코드의 목록이다. IANA가 현재 공식 HTTP 상태 코드 레지스트리 를 관리하고 있다. 모든 HTTP 응답 코드는 5개의 클래스(분류)로 구분된다. 상태 코드의 첫 번째 숫자는 응답의 클래스를 정의한다. 마지막 두 자리는 클래스나 분류 역할을 하지 않는다.</div></div><div class="bookmark-href"><img src="https://ko.wikipedia.org/static/favicon/wikipedia.ico" class="icon bookmark-icon"/>https://ko.wikipedia.org/wiki/HTTP_%EC%83%81%ED%83%9C_%EC%BD%94%EB%93%9C</div></div></a></figure><h2 id="4c510938-1a0e-433c-9c71-342feeada881" class="">로깅(logging)다루기</h2><ul id="8bbfa425-87b2-4ab3-8576-ad9d1d4a6389" class="bulleted-list"><li>서버는 24시간 동작하므로, 문제가 있을 때, 어떤 문제가 있었는지, 파악하기 위해 로깅 기능을 사용함</li></ul><ul id="87c625ad-b2a7-485f-9c5c-61bd250697f5" class="bulleted-list"><li>사용자 모니터링, 해킹 확인등 다양한 상용화시 문제에 대해서도 로깅 기능을 활용할 수 있음</li></ul><h3 id="d588d88d-014e-427b-ba51-90c2c794770b" class=""><strong>간단한 logging 라이브러리 사용법</strong></h3><ul id="601cb53b-ea48-431f-9d3b-86cdd0d3521d" class="bulleted-list"><li>파이썬에는 로그를 다루는 logging 라이브러리가 있음</li></ul><ul id="0e67bf61-f25b-44fb-be09-0cc50bc776e0" class="bulleted-list"><li>로딩 정보는 레벨이 있음</li></ul><ul id="c590ba91-6e68-470b-8101-36e376f803ba" class="bulleted-list"><li>로깅 정보는 로그의 레벨에 따라서 출력을 제한 할 수 있음<ul id="871540d5-082b-492b-acf6-1256865e5f1d" class="bulleted-list"><li>DEBUG &gt; INFO &gt; WARNING &gt; ERROR &gt; Critical</li></ul></li></ul><pre id="a99cae5b-22fc-4016-83f3-9e8efe4c0d28" class="code"><code>import logging
+# 파일로 남기기 위해서는 filename=&#x27;test.log&#x27; 파라미터, 어느 로그까지 남길 것인지를 level 로 설정 가능
+logging.basicConfig(filename=&#x27;test.log&#x27;, level=logging.ERROR)
+
+# 로그를 남길 부분에 다음과 같이 로그 레벨에 맞추어 출력해주면 해당 내용이 파일에 들어감
+logging.debug(&quot;debug&quot;)
+logging.info(&quot;info&quot;)
+logging.warning(&quot;warning&quot;)
+logging.error(&quot;error&quot;)
+logging.critical(&quot;critical&quot;)</code></pre><h2 id="d7756eb8-6358-42c9-8605-5f57273b586e" class=""><strong>MVP (Minimum Viable Product)</strong></h2><ul id="0d34b464-86c6-4646-9abe-ad8441de79ba" class="bulleted-list"><li>최소한의 기능을 구현한 제품</li></ul><ul id="29a8e3d3-6eba-4feb-9d1e-a5e348b0eace" class="bulleted-list"><li>고객의 피드백을 받아서, 기능을 점차적으로 개선</li></ul><ul id="b950c5f6-3df9-4ab2-b7ab-7430a6417d24" class="bulleted-list"><li>최근 스타트업이 개발하는 방식</li></ul><h2 id="2082699c-6b0b-4a0e-9e39-4ddd79eaca53" class=""><strong>SQLAlchemy</strong></h2><ul id="ff821718-76fe-4c1e-8664-faeedb706295" class="bulleted-list"><li>Django 등에서 다양한 데이터베이스를 객체로 만들어서, 사용법을 통일하는 기법으로 SQLAlchemy 라는 기능을 사용함</li></ul><ul id="3b1de360-8e70-480a-9961-7716d46f7751" class="bulleted-list"><li>SQL 이외에 추가적인 SQLAlchemy 기반 CRUD 기법을 익혀야 함</li></ul><ul id="e7d16136-8b92-4334-863c-da3edcad9962" class="bulleted-list"><li>SQL, mongodb CRUD 에 익숙해지는 것이 보다 중요함</li></ul><p id="e17b4a21-ea0b-4db3-974e-36f05b0e21f3" class="">
+            </p>
+          </div>
+          </div>
+        </div>
+        <!-- /.blog-main -->
+
+        <aside class="col-md-4 blog-sidebar">
+          <div class="p-4 mb-3 bg-light rounded">
+            <h4>About</h4>
+            <p class="mb-0">
+              Keyog 라는 닉네임으로 활동하고 있는 개발자 입니다. 인공지능 개발자에서 현재 데이터 엔지니어로 활동하고 있습니다.
+              <a href="https://keyog.tistory.com">
+              개발블로그(tistory)</a> 사이트도 운영 중입니다.
+            </p>
+          </div>
+
+          <div class="p-4">
+            <h4>SNS 채널</h4>
+            <ol class="list-unstyled">
+              <li><a href="#">인스타그램</a></li>
+              <li><a href="#">노션</a></li>
+              <li><a href="#">github</a></li>
+            </ol>
+          </div>
+        </aside>
+        <!-- /.blog-sidebar -->
+      </div>
+      <!-- /.row -->
+    </main>
+    <!-- /.container -->
+</body>
+</html>
